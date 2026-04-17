@@ -1,10 +1,9 @@
-import { UserType } from "./HW2";
-import { UsersObjectType } from "./HW2";
-import { CurrentUser } from "./CurrentUser";
+import { CurrentUser } from './CurrentUser';
+import { UsersObjectType } from './HW2';
 
 type UserList2PropsType = {
     users: UsersObjectType; // пропиши типизацию
-    filterUsers:() => void; // пропиши типизацию
+    filterUsers: () => void; // пропиши типизацию
 };
 
 export const UserList2 = (props: UserList2PropsType) => {
@@ -18,7 +17,7 @@ export const UserList2 = (props: UserList2PropsType) => {
 
             <ul>
                 {props.users.myFriends.map((user) => (
-                    <CurrentUser user={user} />
+                    <CurrentUser key={user.id} user={user} />
                 ))}
             </ul>
         </div>
