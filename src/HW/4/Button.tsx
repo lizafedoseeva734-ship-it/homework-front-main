@@ -1,16 +1,17 @@
 type ButtonPropsType = {
-  callBack: any // НУЖНО ПРОТИПИЗИРОВАТЬ
-  name: any // НУЖНО ПРОТИПИЗИРОВАТЬ
+    callBack: () => void;
+    name: string;
+    id?: string;
 };
 
 export const Button = (props: ButtonPropsType) => {
-  const callBackHandler = () => {
-    // НУЖНО ДОПИСАТЬ
-  };
+    const callBackHandler = () => {
+        props.callBack();
+    };
 
-  return (
-    <button id={'hw04-button'} onClick={callBackHandler}>
-      {props.name}
-    </button>
-  );
+    return (
+        <button id={props.id || 'hw04-button'} onClick={callBackHandler}>
+            {props.name}
+        </button>
+    );
 };
